@@ -1,6 +1,22 @@
+/*
+ * @Author: zl 2293721550@qq.com
+ * @Date: 2024-04-03 22:47:52
+ * @LastEditors: zl 2293721550@qq.com
+ * @LastEditTime: 2024-04-15 16:12:49
+ * @FilePath: \DaChuang\Core\user\turn.c
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
+/*
+ * @Author: zl 2293721550@qq.com
+ * @Date: 2024-04-03 22:47:52
+ * @LastEditors: zl 2293721550@qq.com
+ * @LastEditTime: 2024-04-15 16:12:43
+ * @FilePath: \DaChuang\Core\user\turn.c
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 #include "gy901.h"
 #include "motor.h"
-#include "pid_yuan.h"
+#include "pid.h"
 #include "motor_control.h"
 #include "printTo.h"
 
@@ -10,15 +26,22 @@ float angle = 0;
 int8_t max_speed = 5;
 
 float turn_head_abs(float num) { return num >= 0 ? num : -num; }
-static struct pid_data turn_head_data;
+extern struct PID turn_pid;
 float origin;
 float move_line_angle;
+
+/**
+ * 初始化转向PID结构体
+ */
+void turn_init()
+{
+    turn_pid = initPID(1, 1, 1, 1, 10);
+}
 
 // 初始化转向 得到原始角度 设置pid的值
 void turn_head_init()
 {
     origin = Get_gyr_value(gyr_z_yaw) + 180;
-    pid_init(&turn_head_data, 0, 0.7, 0, 0.8, 20);
 }
 
 // 传入目标旋转角度 初始角度
@@ -53,8 +76,7 @@ void turn()
             turn_init_flag = 0;
         }
         diff = turn_head_diff(angle, origin);
-        int turn_speed = pid_inc(&turn_head_data, -diff);
-        printTo(uart1, "%.2f    %d\r\n", diff, turn_cnt);
+        int turn_speed = returnPID(turn_pid, 0, diff);
         if ((diff <= 2) && (diff >= -2))
             turn_cnt--;
         if (turn_cnt == 0)
