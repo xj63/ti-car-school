@@ -23,12 +23,6 @@ uint8_t turn_flag = 0;
 uint8_t straight_flag = 0;
 uint8_t moving_flag = 0;
 
-void move_init()
-{
-    motor_init();
-    turn_init();
-}
-
 void motor_driver()
 {
     left_cur = -motor_getSpeed(M_L);
@@ -36,9 +30,12 @@ void motor_driver()
     gun_cur = motor_getSpeed(M_G);
 
     moving_flag = turn_flag | straight_flag;
+	
+		printTo(uart1, "move:%d turn:%d stra:%d\r\n", moving_flag, turn_flag, straight_flag);
 
     turn();
     straight();
+    motor_stop();
 
     motor_setSpeed(left_tar, right_tar, gun_tar);
 
