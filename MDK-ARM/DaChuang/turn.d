@@ -37,5 +37,6 @@ dachuang/turn.o: ..\Core\user\turn.c ..\Core\user\gy901.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_tim_ex.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h \
-  ..\Core\user\pid_yuan.h ..\Core\user\motor_control.h \
-  ..\Core\user\printTo.h
+  ..\Core\user\pid.h ..\Core\user\motor_control.h ..\Core\user\printTo.h \
+  ..\Core\user\pid_yuan.h \
+  D:\program\keil_5\ARM\ARMCLANG\Bin\..\include\stdlib.h

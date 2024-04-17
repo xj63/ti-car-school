@@ -54,7 +54,6 @@ float get_P(PID *pid)
         temp = pid->data[pid->data_len - 1];
     else
         temp = pid->data[pid->head - 1];
-    // printTo(uart1, "P:%.0f\r\n", temp);
     return temp;
 }
 
