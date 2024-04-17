@@ -106,6 +106,7 @@ int main(void)
     MX_USART3_UART_Init();
     MX_TIM5_Init();
     /* USER CODE BEGIN 2 */
+    motor_init();
     HAL_TIM_Base_Start_IT(&htim5);
     /* USER CODE END 2 */
     start_turn(45);
