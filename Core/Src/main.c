@@ -109,22 +109,13 @@ int main(void)
     motor_init();
     HAL_TIM_Base_Start_IT(&htim5);
     /* USER CODE END 2 */
-    start_turn(45);
-    for (int i = 30; i >= 0; i--)
-    {
-        HAL_Delay(100);
-    }
-    start_straight(5000);
-    for (int i = 30; i >= 0; i--)
-    {
-        HAL_Delay(100);
-    }
+    // while(moving_flag);
+    start_straight(2000);
     start_turn(90);
-    for (int i = 30; i >= 0; i--)
-    {
-        HAL_Delay(100);
-    }
-    start_straight(3000);
+    start_straight(800);
+    start_turn(90);
+    start_straight(1500);
+    start_turn(-90);
     /* Infinite loop */
     /* USER CODE BEGIN WHILE */
     while (1)
