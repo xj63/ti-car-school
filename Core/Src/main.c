@@ -32,6 +32,7 @@
 #include "buzzer.h"
 #include "gw_findline.h"
 #include "turn_abs.h"
+#include "util.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -132,12 +133,16 @@ int main(void)
 
     // 测试绝对转向
     turn_abs_start_turn(90);
+    await();
     buzzer_ring();
     turn_abs_start_turn(180);
+    await();
     buzzer_ring();
     turn_abs_start_turn(90);
+    await();
     buzzer_ring();
     turn_abs_start_turn(45);
+    await();
     buzzer_ring();
     // start_straight(1000);
     while (1)
