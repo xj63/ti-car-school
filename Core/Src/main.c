@@ -131,19 +131,17 @@ int main(void)
     /* USER CODE BEGIN WHILE */
     // start_straight(1000);
 
-    // 测试绝对转向
-    turn_abs_start_turn(90);
-    await();
-    buzzer_ring();
-    turn_abs_start_turn(180);
-    await();
+    // 测试保持0度前进
     buzzer_ring();
     turn_abs_start_turn(90);
     await();
-    buzzer_ring();
-    turn_abs_start_turn(45);
+    turn_abs_start_turn(0);
     await();
     buzzer_ring();
+    turn_abs_start_turn(0);
+    start_straight(5000);
+    buzzer_ring();
+    await();
     // start_straight(1000);
     while (1)
     {
