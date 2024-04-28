@@ -108,7 +108,6 @@ void turn()
         if (turn_speed < -7)
             turn_speed = -TURN_SPEED;
         printTo(uart1, "%d\r\n", turn_speed);
-        turn_XZ = 0;
         left_tar = -turn_speed - turn_XZ;
         right_tar = turn_speed - turn_XZ;
         printTo(uart3, "%d, %d, %d, %d, %d\r\n", left_L, right_L, left_tar, right_tar, turn_XZ);
