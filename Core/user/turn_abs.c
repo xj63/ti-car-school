@@ -28,8 +28,6 @@ int8_t turn_cnt = 0;
 float angle = 0;
 int8_t max_speed = 5;
 
-float turn_head_abs(float num) { return num >= 0 ? num : -num; }
-int16_t abs_XZ(int16_t num) { return num >= 0 ? num : -num; };
 struct PID *turn_pid;
 float origin;
 float move_line_angle;
