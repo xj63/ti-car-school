@@ -11,6 +11,7 @@
 #include "turn.h"
 #include "straight.h"
 #include "motor_control.h"
+#include "turn_abs.h"
 #include "printTo.h"
 
 int8_t left_tar = 0;
@@ -35,6 +36,7 @@ void motor_driver()
 		//printTo(uart1, "move:%d turn:%d stra:%d\r\n", moving_flag, turn_flag, straight_flag);
 
     turn();
+    turn_abs();
     straight();
     motor_stop();
 
