@@ -16,8 +16,6 @@ struct PID *speed_XZ_pid = NULL;
 
 void start_straight(int16_t L)
 {
-    while (get_flag())
-        ;
     straight_L = L;
     straight_flag = 1;
     moving_flag = turn_flag | straight_flag;
