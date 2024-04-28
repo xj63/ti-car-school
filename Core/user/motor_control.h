@@ -21,11 +21,14 @@ extern int8_t left_cur;
 extern int8_t right_cur;
 extern int8_t gun_cur;
 extern uint8_t turn_flag;
+extern uint8_t turn_abs_flag;
 extern uint8_t straight_flag;
 extern uint8_t moving_flag;
 
 extern void motor_driver();
 extern void start_straight(int16_t L);
 extern void start_turn(float turn_angle);
+
+extern bool get_flag();
 
 #endif

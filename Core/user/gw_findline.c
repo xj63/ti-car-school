@@ -25,7 +25,7 @@ uint8_t gw_gray_get_line_digital_is_black()
     HAL_I2C_Master_Transmit(&hi2c1, GW_GRAY_ADDR << 1, &cmd, 1, 100);
     HAL_Delay(100);
     HAL_I2C_Master_Receive(&hi2c1, GW_GRAY_ADDR << 1, &buf, 1, 100);
-    printTo(uart3, "%d\r\n", buf);
+    // printTo(uart3, "%d\r\n", buf);
     return ~buf;
 }
 
