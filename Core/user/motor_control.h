@@ -21,6 +21,7 @@ extern int8_t left_cur;
 extern int8_t right_cur;
 extern int8_t gun_cur;
 extern uint8_t turn_flag;
+extern uint8_t turn_abs_flag;
 extern uint8_t straight_flag;
 extern uint8_t moving_flag;
 

@@ -20,6 +20,7 @@ int8_t left_cur = 0;
 int8_t right_cur = 0;
 int8_t gun_cur = 0;
 uint8_t turn_flag = 0;
+uint8_t turn_abs_flag = 0;
 uint8_t straight_flag = 0;
 uint8_t moving_flag = 0;
 

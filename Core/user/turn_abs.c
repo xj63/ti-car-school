@@ -49,7 +49,7 @@ void turn_abs()
 {
     static int16_t left_L = 0;
     static int16_t right_L = 0;
-    if (turn_flag)
+    if (turn_abs_flag)
     {
         float diff;
 
@@ -65,7 +65,7 @@ void turn_abs()
             turn_abs_cnt--;
             if (turn_abs_cnt == 0)
             {
-                turn_flag = 0;
+                turn_abs_flag = 0;
                 turn_abs_angle = 0;
                 left_tar = 0;
                 right_tar = 0;
@@ -91,9 +91,9 @@ void turn_abs_start_turn(float turn_angle)
 {
     while (moving_flag)
         ;
-    turn_flag = 1;
+    turn_abs_flag = 1;
     turn_abs_angle = turn_angle;
     turn_abs_cnt = 1;
     turn_abs_XZ_pid = initPID(0.1, 0, 0, 1, 10);
-    moving_flag = turn_flag | straight_flag;
+    moving_flag = turn_flag | straight_flag | turn_abs_flag;
 }
