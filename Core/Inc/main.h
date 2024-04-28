@@ -75,6 +75,8 @@ void Error_Handler(void);
 #define M2_PWM_GPIO_Port GPIOD
 #define M3_PWM_Pin GPIO_PIN_14
 #define M3_PWM_GPIO_Port GPIOD
+#define BUZZER_Pin GPIO_PIN_4
+#define BUZZER_GPIO_Port GPIOD
 
 /* USER CODE BEGIN Private defines */
 

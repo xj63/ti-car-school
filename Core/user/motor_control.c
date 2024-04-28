@@ -30,8 +30,8 @@ void motor_driver()
     gun_cur = motor_getSpeed(M_G);
 
     moving_flag = turn_flag | straight_flag;
-	
-		printTo(uart1, "move:%d turn:%d stra:%d\r\n", moving_flag, turn_flag, straight_flag);
+
+		//printTo(uart1, "move:%d turn:%d stra:%d\r\n", moving_flag, turn_flag, straight_flag);
 
     turn();
     straight();

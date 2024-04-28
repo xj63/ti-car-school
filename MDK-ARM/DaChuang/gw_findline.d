@@ -1,4 +1,7 @@
-dachuang/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
+dachuang/gw_findline.o: ..\Core\user\gw_findline.c \
+  ..\Core\user\gw_findline.h \
+  D:\program\keil_5\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  ..\Core\Inc\i2c.h ..\Core\Inc\main.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal.h \
   ..\Core\Inc\stm32h7xx_hal_conf.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h \
@@ -6,7 +9,6 @@ dachuang/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h7xx.h \
   ..\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h750xx.h \
   ..\Drivers\CMSIS\Include\core_cm7.h \
-  D:\program\keil_5\ARM\ARMCLANG\Bin\..\include\stdint.h \
   ..\Drivers\CMSIS\Include\cmsis_version.h \
   ..\Drivers\CMSIS\Include\cmsis_compiler.h \
   ..\Drivers\CMSIS\Include\cmsis_armclang.h \
@@ -36,7 +38,4 @@ dachuang/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_tim_ex.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h \
-  ..\Core\Inc\i2c.h ..\Core\Inc\tim.h ..\Core\Inc\usart.h \
-  ..\Core\Inc\gpio.h ..\Core\user\motor.h ..\Core\user\motor_control.h \
-  ..\Core\user\gy901.h ..\Core\user\printTo.h ..\Core\user\buzzer.h \
-  ..\Core\user\gw_findline.h
+  ..\Core\user\printTo.h

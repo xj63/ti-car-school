@@ -12,7 +12,7 @@
 #include "main.h"
 
 #define TURN_SPEED 10
-#define STRAIGHT_SPEED 10
+#define STRAIGHT_SPEED 20
 
 extern int8_t left_tar;
 extern int8_t right_tar;

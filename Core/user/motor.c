@@ -90,7 +90,7 @@ int32_t M2_P_buf = 0;
 
 void motor_setSpeed(int s1, int s2, int s3)
 {
-    
+
     static int32_t M3_P_buf = 0;
 
     int32_t max_P = 50000;
@@ -171,7 +171,7 @@ void motor_stop()
 				M1_P_buf = 0;
 				M2_P_buf = 0;
     }
-		
+
 		return;
 }
 

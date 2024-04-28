@@ -681,6 +681,26 @@
               <FileType>5</FileType>
               <FilePath>..\Core\user\turn.h</FilePath>
             </File>
+            <File>
+              <FileName>buzzer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\user\buzzer.c</FilePath>
+            </File>
+            <File>
+              <FileName>buzzer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Core\user\buzzer.h</FilePath>
+            </File>
+            <File>
+              <FileName>gw_findline.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\user\gw_findline.c</FilePath>
+            </File>
+            <File>
+              <FileName>gw_findline.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Core\user\gw_findline.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

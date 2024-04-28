@@ -29,7 +29,7 @@ float angle = 0;
 int8_t max_speed = 5;
 
 float turn_head_abs(float num) { return num >= 0 ? num : -num; }
-int16_t abs_XZ(int16_t num){return num >= 0 ? num : -num; };
+int16_t abs_XZ(int16_t num) { return num >= 0 ? num : -num; };
 struct PID *turn_pid;
 float origin;
 float move_line_angle;
@@ -45,7 +45,6 @@ void turn_head_init()
 {
     origin = Get_gyr_value(gyr_z_yaw) + 180;
     pid_init(&turn_head_data, 0, 0.6, 0, 0, 5);
-    turn_XZ_pid = initPID(1, 0, 0, 1, 10);
 }
 
 // 传入目标旋转角度 初始角度
@@ -105,12 +104,14 @@ void turn()
             }
         }
         if (turn_speed > 7)
-            turn_speed = TURN_SPEED - turn_XZ;
+            turn_speed = TURN_SPEED;
         if (turn_speed < -7)
-            turn_speed = -TURN_SPEED + turn_XZ;
+            turn_speed = -TURN_SPEED;
         printTo(uart1, "%d\r\n", turn_speed);
-        left_tar = -turn_speed;
-        right_tar = turn_speed;
+        turn_XZ = 0;
+        left_tar = -turn_speed - turn_XZ;
+        right_tar = turn_speed - turn_XZ;
+        printTo(uart3, "%d, %d, %d, %d, %d\r\n", left_L, right_L, left_tar, right_tar, turn_XZ);
     }
 }
 
@@ -122,5 +123,6 @@ void start_turn(float turn_angle)
     turn_init_flag = 1;
     angle = turn_angle;
     turn_cnt = 1;
+    turn_XZ_pid = initPID(0.1, 0, 0, 1, 10);
     moving_flag = turn_flag | straight_flag;
 }

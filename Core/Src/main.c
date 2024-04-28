@@ -29,6 +29,8 @@
 #include "motor_control.h"
 #include "gy901.h"
 #include "printTo.h"
+#include "buzzer.h"
+#include "gw_findline.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -55,7 +57,19 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+void I2C_scan()
+{
+    printTo(uart3, "\n\n");
+    uint8_t data[10];
+    for (uint8_t i = 0; i < 255; i++)
+    {
+        uint8_t re = HAL_I2C_Mem_Read(&hi2c1, i, 0, I2C_MEMADD_SIZE_8BIT, data, 1, 0xff);
+        if (re == HAL_OK)
+            printTo(uart3, "0x%02x ", i);
+        else
+            printTo(uart3, ".");
+    }
+}
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -109,19 +123,18 @@ int main(void)
     motor_init();
     HAL_TIM_Base_Start_IT(&htim5);
     /* USER CODE END 2 */
-    // while(moving_flag);
-    start_straight(2000);
-    start_turn(90);
-    start_straight(800);
-    start_turn(90);
-    start_straight(1500);
-    start_turn(-90);
+
     /* Infinite loop */
     /* USER CODE BEGIN WHILE */
+    buzzer_ring();
+    // start_straight(1000);
+    start_turn(90);
+    // start_straight(1000);
     while (1)
     {
         /* USER CODE END WHILE */
-
+        gw_gray_get_line_digital_is_black();
+        HAL_Delay(100);
         /* USER CODE BEGIN 3 */
     }
     /* USER CODE END 3 */
