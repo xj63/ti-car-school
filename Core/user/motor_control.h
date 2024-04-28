@@ -29,6 +29,6 @@ extern void motor_driver();
 extern void start_straight(int16_t L);
 extern void start_turn(float turn_angle);
 
-extern bool get_flag();
+extern uint8_t get_flag();
 
 #endif
