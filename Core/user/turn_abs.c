@@ -89,6 +89,8 @@ void turn_abs()
 
 void turn_abs_start_turn(float turn_angle)
 {
+    while (get_flag())
+        ;
     turn_abs_flag = 1;
     turn_abs_angle = turn_angle;
     turn_abs_cnt = 1;
