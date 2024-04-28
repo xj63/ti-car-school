@@ -71,8 +71,8 @@ void turn_abs()
                 right_tar = 0;
                 left_L = 0;
                 right_L = 0;
-                free(turn_abs_XZ_pid);
-                turn_abs_XZ_pid = NULL;
+                // free(turn_abs_XZ_pid);
+                // turn_abs_XZ_pid = NULL;
                 return;
             }
         }
