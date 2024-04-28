@@ -122,7 +122,7 @@ int main(void)
     MX_TIM5_Init();
     /* USER CODE BEGIN 2 */
     motor_init();
-    turn_abs_init();
+    turn_abs_head_init();
     HAL_TIM_Base_Start_IT(&htim5);
     /* USER CODE END 2 */
 
