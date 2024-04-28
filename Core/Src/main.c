@@ -133,6 +133,8 @@ int main(void)
     // 测试绝对转向
     turn_abs_start_turn(90);
     buzzer_ring();
+	turn_abs_start_turn(0);
+
     start_straight(5000, 0);
     while (1)
     {
