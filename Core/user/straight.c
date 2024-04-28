@@ -39,7 +39,7 @@ void straight()
             left_tar = STRAIGHT_SPEED + speed_XZ; // 修正两边轮子走的距离不一样的问题
             right_tar = STRAIGHT_SPEED - speed_XZ;
             straight_L -= (left_cur + right_cur) / 2;
-						printTo(uart3, "%d, %d, %d, %d, %d\r\n", left_L, right_L, left_tar, right_tar, speed_XZ);
+						// printTo(uart3, "%d, %d, %d, %d, %d\r\n", left_L, right_L, left_tar, right_tar, speed_XZ);
 
         }
         else
