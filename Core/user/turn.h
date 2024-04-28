@@ -4,5 +4,6 @@
 extern void turn();
 extern void turn_head_init();
 extern void start_turn(float angle);
+extern float turn_head_diff(float angle, float origin_angle);
 
 #endif // !__TURN_HEAD_H__

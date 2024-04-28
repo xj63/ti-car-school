@@ -16,6 +16,7 @@
  */
 #include "gy901.h"
 #include "motor.h"
+#include "turn.h"
 #include "pid.h"
 #include "motor_control.h"
 #include "printTo.h"
@@ -44,26 +45,6 @@ void turn_abs_head_init()
 {
     origin = Get_gyr_value(gyr_z_yaw) + 180;
     pid_init(&turn_head_data, 0, 0.6, 0, 0, 5);
-}
-
-// 传入目标旋转角度 初始角度
-// 输出偏差值
-float turn_head_diff(float angle, float origin_angle)
-{
-    float current = Get_gyr_value(gyr_z_yaw) + 180;
-    float target = origin_angle + angle;
-    target = target > 360 ? target - 360 : target;
-    target = target < 0 ? target + 360 : target;
-    float tc = target - current;
-    if (turn_head_abs(tc) <= 180)
-        return tc;
-    else
-    {
-        if (tc > 180)
-            return tc - 360;
-        else
-            return tc + 360;
-    };
 }
 
 void turn_abs()
