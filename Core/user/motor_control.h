@@ -24,9 +24,10 @@ extern uint8_t turn_flag;
 extern uint8_t turn_abs_flag;
 extern uint8_t straight_flag;
 extern uint8_t moving_flag;
+extern float static_keep_angle;
 
 extern void motor_driver();
-extern void start_straight(int16_t L);
+extern void start_straight(int16_t L, float angle);
 extern void start_turn(float turn_angle);
 
 extern uint8_t get_flag();

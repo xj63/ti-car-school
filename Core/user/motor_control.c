@@ -4,15 +4,17 @@
  * @LastEditors: zl 2293721550@qq.com
  * @LastEditTime: 2024-04-15 16:02:00
  * @FilePath: \DaChuang\Core\user\motor_control.c
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
+ * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
+#include "motor_control.h"
+#include "keep.h"
 #include "main.h"
 #include "motor.h"
-#include "turn.h"
-#include "straight.h"
-#include "motor_control.h"
-#include "turn_abs.h"
 #include "printTo.h"
+#include "straight.h"
+#include "turn.h"
+#include "turn_abs.h"
 
 int8_t left_tar = 0;
 int8_t right_tar = 0;
@@ -24,27 +26,28 @@ uint8_t turn_flag = 0;
 uint8_t turn_abs_flag = 0;
 uint8_t straight_flag = 0;
 uint8_t moving_flag = 0;
+float static_keep_angle = 0.0;
 
-uint8_t get_flag() {
-    return turn_flag | turn_abs_flag | straight_flag;
-}
+uint8_t get_flag() { return turn_flag | turn_abs_flag | straight_flag; }
 
-void motor_driver()
-{
-    left_cur = -motor_getSpeed(M_L);
-    right_cur = motor_getSpeed(M_R);
-    gun_cur = motor_getSpeed(M_G);
+void motor_driver() {
+  left_cur = -motor_getSpeed(M_L);
+  right_cur = motor_getSpeed(M_R);
+  gun_cur = motor_getSpeed(M_G);
 
-    moving_flag = turn_flag | straight_flag;
+  // printTo(uart1, "move:%d turn:%d stra:%d\r\n", moving_flag, turn_flag,
+  // straight_flag);
 
-		//printTo(uart1, "move:%d turn:%d stra:%d\r\n", moving_flag, turn_flag, straight_flag);
+  left_tar = 0;
+  right_tar = 0;
 
-    turn();
-    turn_abs();
-    straight();
-    motor_stop();
+  keep_angle();
+  turn();
+  turn_abs();
+  straight();
+  motor_stop();
 
-    motor_setSpeed(left_tar, right_tar, gun_tar);
+  motor_setSpeed(left_tar, right_tar, gun_tar);
 
-    return;
+  return;
 }

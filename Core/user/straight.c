@@ -10,14 +10,16 @@
 #include "motor_control.h"
 #include "printTo.h"
 #include "stdlib.h"
+#include "keep.h"
 
 int16_t straight_L = 0;
 struct PID *speed_XZ_pid = NULL;
 
-void start_straight(int16_t L)
+void start_straight(int16_t L, float angle)
 {
     while (get_flag())
         ;
+    keep_angle_set(angle);
     straight_L = L;
     straight_flag = 1;
     moving_flag = turn_flag | straight_flag;
@@ -36,8 +38,8 @@ void straight()
             right_L += right_cur;
             int16_t diff = left_L - right_L;
             int16_t speed_XZ = returnPID(speed_XZ_pid, diff, 0);
-            left_tar = STRAIGHT_SPEED + speed_XZ; // 修正两边轮子走的距离不一样的问题
-            right_tar = STRAIGHT_SPEED - speed_XZ;
+            left_tar += STRAIGHT_SPEED + speed_XZ; // 修正两边轮子走的距离不一样的问题
+            right_tar += STRAIGHT_SPEED - speed_XZ;
             straight_L -= (left_cur + right_cur) / 2;
 						// printTo(uart3, "%d, %d, %d, %d, %d\r\n", left_L, right_L, left_tar, right_tar, speed_XZ);
 
