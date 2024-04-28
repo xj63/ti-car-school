@@ -56,7 +56,8 @@ void turn_abs()
         left_L += abs_XZ(left_cur);
         right_L += abs_XZ(right_cur);
         int16_t diff_L = left_L - right_L;
-        int16_t turn_XZ = returnPID(turn_XZ_pid, diff_L, 0);
+        // int16_t turn_XZ = returnPID(turn_XZ_pid, diff_L, 0);
+        int16_t turn_XZ = 0;
         diff = turn_head_diff(angle, origin);
         int turn_speed = pid_inc(&turn_head_data, -diff);
         if ((diff <= 2) && (diff >= -2))
