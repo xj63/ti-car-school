@@ -158,7 +158,7 @@ void motor_setSpeed(int s1, int s2, int s3)
 
 void motor_stop()
 {
-    if (!moving_flag)
+    if (!get_flag())
     {
         left_tar = 0;
         right_tar = 0;

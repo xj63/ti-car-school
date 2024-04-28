@@ -117,7 +117,7 @@ void turn()
 
 void start_turn(float turn_angle)
 {
-    while (moving_flag)
+    while (get_flag())
         ;
     turn_flag = 1;
     turn_init_flag = 1;
