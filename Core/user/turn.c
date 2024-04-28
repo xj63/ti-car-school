@@ -24,7 +24,6 @@
 #include "main.h"
 
 int8_t turn_cnt = 0;
-int8_t turn_init_flag = 0;
 float angle = 0;
 int8_t max_speed = 5;
 
@@ -79,11 +78,6 @@ void turn()
         right_L += abs_XZ(right_cur);
         int16_t diff_L = left_L - right_L;
         int16_t turn_XZ = returnPID(turn_XZ_pid, diff_L, 0);
-        if (turn_init_flag == 1)
-        {
-            turn_head_init();
-            turn_init_flag = 0;
-        }
         diff = turn_head_diff(angle, origin);
         int turn_speed = pid_inc(&turn_head_data, -diff);
         if ((diff <= 2) && (diff >= -2))
@@ -119,7 +113,6 @@ void start_turn(float turn_angle)
     while (moving_flag)
         ;
     turn_flag = 1;
-    turn_init_flag = 1;
     angle = turn_angle;
     turn_cnt = 1;
     turn_XZ_pid = initPID(0.1, 0, 0, 1, 10);
