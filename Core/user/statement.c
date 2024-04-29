@@ -1,5 +1,5 @@
-#include "statement.h"
 #include "include_user_all.h"
+#include "statement.h"
 #include "math_utils.h"
 
 struct Statement static_statement;

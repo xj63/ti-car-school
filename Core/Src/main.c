@@ -27,10 +27,7 @@
 /* USER CODE BEGIN Includes */
 #include "motor.h"
 #include "motor_control.h"
-#include "gy901.h"
-#include "printTo.h"
-#include "buzzer.h"
-#include "gw_findline.h"
+#include "include_user_all.h"
 #include "turn_abs.h"
 #include "findline.h"
 #include "straight.h"

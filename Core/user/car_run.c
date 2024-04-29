@@ -1,3 +1,4 @@
+#include "include_user_all.h"
 #include "findline.h"
 #include "keep.h"
 #include "main.h"
