@@ -35,6 +35,8 @@
 #include "findline.h"
 #include "straight.h"
 #include "keep.h"
+#include "car_init.h"
+#include "car_run.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
