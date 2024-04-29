@@ -39,6 +39,14 @@ PID *initPID(float kp, float ki, float kd, int data_len, float i_max)
     return pid;
 }
 
+void reinitPID(PID *pid)
+{
+    pid->is_first = 1;
+    pid->head = 0;
+    for (int i = 0; i < pid->data_len; i++)
+        pid->data[i] = 0;
+}
+
 void update_Data(PID *pid, float cur, float tar)
 {
     float err = tar - cur;

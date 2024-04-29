@@ -2,7 +2,7 @@
  * @Author: zl 2293721550@qq.com
  * @Date: 2024-03-26 23:09:10
  * @LastEditors: zl 2293721550@qq.com
- * @LastEditTime: 2024-04-17 16:59:30
+ * @LastEditTime: 2024-04-29 19:48:04
  * @FilePath: \DaChuang\Core\user\motor.c
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AEif（
  */
@@ -23,8 +23,8 @@ PID *M_3;
 void motor_init()
 {
     M_1 = initPID(15, 10, 10, 5, 100);
-    M_2 = initPID(20, 10, 10, 5, 100);
-    M_3 = initPID(10, 10, 10, 5, 100);
+    M_2 = initPID(15, 10, 10, 5, 100);
+    M_3 = initPID(15, 10, 10, 5, 100);
 
     HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
     HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_2);
@@ -168,10 +168,11 @@ void motor_stop()
         HAL_GPIO_WritePin(M1_D2_GPIO_Port, M1_D2_Pin, 1);
         HAL_GPIO_WritePin(M2_D1_GPIO_Port, M2_D1_Pin, 1);
         HAL_GPIO_WritePin(M2_D2_GPIO_Port, M2_D2_Pin, 1);
-				M1_P_buf = 0;
-				M2_P_buf = 0;
+        M1_P_buf = 0;
+        M2_P_buf = 0;
+        reinitPID(M_1);
+        reinitPID(M_2);
     }
 
-		return;
+    return;
 }
-
