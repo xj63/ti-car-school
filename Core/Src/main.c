@@ -37,6 +37,7 @@
 #include "keep.h"
 #include "car_init.h"
 #include "car_run.h"
+#include "car_timer.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -83,7 +84,7 @@ void I2C_scan()
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-    motor_driver();
+    car_timer();
 }
 /* USER CODE END 0 */
 
