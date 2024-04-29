@@ -59,7 +59,7 @@ void mode2(){
 
     turn_abs_start_turn(90.0);
 
-    // TODO: start_straight(-1000);
+    start_straight(-1000);
 
     start_straight(3500);
     start_keep_angle(90.0);
@@ -83,4 +83,5 @@ void mode2(){
 
 void car_run()
 {
+    mode2();
 }
