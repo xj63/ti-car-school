@@ -32,6 +32,11 @@
 #include "buzzer.h"
 #include "gw_findline.h"
 #include "turn_abs.h"
+#include "findline.h"
+#include "straight.h"
+#include "keep.h"
+#include "car_init.h"
+#include "car_run.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -121,30 +126,17 @@ int main(void)
     MX_USART3_UART_Init();
     MX_TIM5_Init();
     /* USER CODE BEGIN 2 */
-    motor_init();
-    turn_abs_head_init();
-    HAL_TIM_Base_Start_IT(&htim5);
+    car_init();
     /* USER CODE END 2 */
 
     /* Infinite loop */
     /* USER CODE BEGIN WHILE */
-    // start_straight(1000);
+    car_run();
 
-    // 测试绝对转向
-    turn_abs_start_turn(90);
-    buzzer_ring();
-    turn_abs_start_turn(180);
-    buzzer_ring();
-    turn_abs_start_turn(90);
-    buzzer_ring();
-    turn_abs_start_turn(45);
-    buzzer_ring();
-    // start_straight(1000);
     while (1)
     {
         /* USER CODE END WHILE */
-        gw_gray_get_line_digital_is_black();
-        HAL_Delay(100);
+
         /* USER CODE BEGIN 3 */
     }
     /* USER CODE END 3 */
