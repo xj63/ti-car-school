@@ -16,19 +16,6 @@ void statement_init() {
   static_statement.current.wheels.right = 0;
 }
 
-void statement_init_for_test(float direction_offset) {
-  static_statement.direction_offset = direction_offset;
-  static_statement.current.direction = direction_offset;
-
-  // 无聊的填 0 阶段
-  static_statement.target.wheels.left = 0;
-  static_statement.target.wheels.right = 0;
-  static_statement.target.direction = 0.0;
-
-  static_statement.current.wheels.left = 0;
-  static_statement.current.wheels.right = 0;
-}
-
 struct Wheels statement_diff_wheels() {
   struct Wheels ret;
   ret.left = static_statement.target.wheels.left -
