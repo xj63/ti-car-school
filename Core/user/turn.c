@@ -77,8 +77,8 @@ void turn()
         left_L += abs_XZ(left_cur);
         right_L += abs_XZ(right_cur);
         int16_t diff_L = left_L - right_L;
-        // int16_t turn_XZ = returnPID(turn_XZ_pid, diff_L, 0);
-        int16_t turn_XZ = 0;
+        int16_t turn_XZ = returnPID(turn_XZ_pid, diff_L, 0);
+        // int16_t turn_XZ = 0;
         if (turn_init_flag == 1)
         {
             turn_head_init();

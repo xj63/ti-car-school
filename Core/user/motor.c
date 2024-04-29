@@ -23,7 +23,7 @@ PID *M_3;
 void motor_init()
 {
     M_1 = initPID(15, 10, 10, 5, 100);
-    M_2 = initPID(10, 10, 10, 5, 100);
+    M_2 = initPID(20, 10, 10, 5, 100);
     M_3 = initPID(10, 10, 10, 5, 100);
 
     HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
