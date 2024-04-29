@@ -1,4 +1,5 @@
-dachuang/motor_control.o: ..\Core\user\motor_control.c ..\Core\Inc\main.h \
+dachuang/motor_control.o: ..\Core\user\motor_control.c \
+  ..\Core\user\motor_control.h ..\Core\Inc\main.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal.h \
   ..\Core\Inc\stm32h7xx_hal_conf.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h \
@@ -36,5 +37,6 @@ dachuang/motor_control.o: ..\Core\user\motor_control.c ..\Core\Inc\main.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_tim_ex.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h \
-  ..\Core\user\motor.h ..\Core\user\turn.h ..\Core\user\straight.h \
-  ..\Core\user\motor_control.h ..\Core\user\printTo.h
+  ..\Core\user\keep.h ..\Core\user\motor.h ..\Core\user\printTo.h \
+  ..\Core\user\straight.h ..\Core\user\turn.h ..\Core\user\turn_abs.h \
+  ..\Core\user\findline.h

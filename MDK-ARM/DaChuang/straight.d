@@ -38,4 +38,5 @@ dachuang/straight.o: ..\Core\user\straight.c ..\Core\user\pid.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h \
   ..\Core\user\printTo.h \
-  D:\program\keil_5\ARM\ARMCLANG\Bin\..\include\stdlib.h
+  D:\program\keil_5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
+  ..\Core\user\keep.h

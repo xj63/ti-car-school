@@ -32,6 +32,9 @@
 #include "buzzer.h"
 #include "gw_findline.h"
 #include "turn_abs.h"
+#include "findline.h"
+#include "straight.h"
+#include "keep.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -128,19 +131,19 @@ int main(void)
 
     /* Infinite loop */
     /* USER CODE BEGIN WHILE */
-    // start_straight(1000);
+    start_straight(2000);
+		start_keep_angle(0);
+		turn_abs_start_turn(90);
+		start_straight(2000);
+		start_keep_angle(90);
+		turn_abs_start_turn(40);
+		start_straight(2000);
+		start_keep_angle(40);
 
-    // 测试绝对转向
-    turn_abs_start_turn(90);
-    buzzer_ring();
-	turn_abs_start_turn(0);
-
-    start_straight(5000, 0);
     while (1)
     {
         /* USER CODE END WHILE */
-        gw_gray_get_line_digital_is_black();
-        HAL_Delay(100);
+
         /* USER CODE BEGIN 3 */
     }
     /* USER CODE END 3 */

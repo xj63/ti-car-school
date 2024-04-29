@@ -38,6 +38,9 @@
 "dachuang\turn.o"
 "dachuang\buzzer.o"
 "dachuang\gw_findline.o"
+"dachuang\turn_abs.o"
+"dachuang\keep.o"
+"dachuang\findline.o"
 --strict --scatter "DaChuang\DaChuang.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

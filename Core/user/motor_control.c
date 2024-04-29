@@ -15,6 +15,7 @@
 #include "straight.h"
 #include "turn.h"
 #include "turn_abs.h"
+#include "findline.h"
 
 int8_t left_tar = 0;
 int8_t right_tar = 0;
@@ -25,6 +26,8 @@ int8_t gun_cur = 0;
 uint8_t turn_flag = 0;
 uint8_t turn_abs_flag = 0;
 uint8_t straight_flag = 0;
+uint8_t findline_flag = 0;
+uint8_t keepangle_flag = 0;
 uint8_t moving_flag = 0;
 float static_keep_angle = 0.0;
 
@@ -44,8 +47,9 @@ void motor_driver()
 
     turn();
     turn_abs();
-    straight();
     keep_angle();
+    straight();
+    findline();
     motor_stop();
 
     motor_setSpeed(left_tar, right_tar, gun_tar);

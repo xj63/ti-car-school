@@ -2,7 +2,7 @@
  * @Author: zl 2293721550@qq.com
  * @Date: 2024-04-03 23:56:39
  * @LastEditors: zl 2293721550@qq.com
- * @LastEditTime: 2024-04-19 19:48:57
+ * @LastEditTime: 2024-04-29 12:53:04
  * @FilePath: \DaChuang\Core\user\straight.c
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -15,15 +15,14 @@
 int16_t straight_L = 0;
 struct PID *speed_XZ_pid = NULL;
 
-void start_straight(int16_t L, float angle)
+void start_straight(int16_t L)
 {
     while (get_flag())
         ;
-    keep_angle_set(angle);
     straight_L = L;
     straight_flag = 1;
-    moving_flag = turn_flag | straight_flag;
-    speed_XZ_pid = initPID(0.1, 0, 0, 5, 10);
+    // moving_flag = turn_flag | straight_flag;
+    speed_XZ_pid = initPID(0, 0, 0, 5, 10);
 }
 
 void straight()
@@ -41,8 +40,7 @@ void straight()
             left_tar += STRAIGHT_SPEED + speed_XZ; // 修正两边轮子走的距离不一样的问题
             right_tar += STRAIGHT_SPEED - speed_XZ;
             straight_L -= (left_cur + right_cur) / 2;
-						// printTo(uart3, "%d, %d, %d, %d, %d\r\n", left_L, right_L, left_tar, right_tar, speed_XZ);
-
+            // printTo(uart3, "%d, %d, %d, %d, %d\r\n", left_L, right_L, left_tar, right_tar, speed_XZ);
         }
         else
         {

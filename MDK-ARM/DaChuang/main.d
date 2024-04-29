@@ -39,4 +39,5 @@ dachuang/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Core\Inc\i2c.h ..\Core\Inc\tim.h ..\Core\Inc\usart.h \
   ..\Core\Inc\gpio.h ..\Core\user\motor.h ..\Core\user\motor_control.h \
   ..\Core\user\gy901.h ..\Core\user\printTo.h ..\Core\user\buzzer.h \
-  ..\Core\user\gw_findline.h
+  ..\Core\user\gw_findline.h ..\Core\user\turn_abs.h \
+  ..\Core\user\findline.h ..\Core\user\straight.h ..\Core\user\keep.h

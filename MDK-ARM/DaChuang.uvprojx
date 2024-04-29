@@ -701,6 +701,36 @@
               <FileType>5</FileType>
               <FilePath>..\Core\user\gw_findline.h</FilePath>
             </File>
+            <File>
+              <FileName>turn_abs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\user\turn_abs.c</FilePath>
+            </File>
+            <File>
+              <FileName>turn_abs.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Core\user\turn_abs.h</FilePath>
+            </File>
+            <File>
+              <FileName>keep.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\user\keep.c</FilePath>
+            </File>
+            <File>
+              <FileName>keep.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Core\user\keep.h</FilePath>
+            </File>
+            <File>
+              <FileName>findline.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\user\findline.c</FilePath>
+            </File>
+            <File>
+              <FileName>findline.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Core\user\findline.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

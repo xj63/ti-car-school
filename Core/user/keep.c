@@ -20,17 +20,32 @@ static struct pid_data keep_angle_pid;
 void keep_angle_set(float angle)
 {
     static_keep_angle = angle;
-    pid_init(&keep_angle_pid, 0, 3, 0, 0, 5);
+    pid_init(&keep_angle_pid, 0, 3, 0, 5, 5);
+}
+
+void start_keep_angle(float angle)
+{
+    if (straight_flag == 1)
+    {
+        keep_angle_set(angle);
+        keepangle_flag = 1;
+    }
 }
 
 void keep_angle()
 {
-    if (straight_flag)
+    if (keepangle_flag == 1)
     {
+        if (straight_flag == 0)
+        {
+            keepangle_flag = 0;
+            return;
+        }
         float diff;
         int16_t turn_XZ = 0;
         diff = turn_head_diff(static_keep_angle, turn_abs_origin);
         int turn_speed = pid_inc(&keep_angle_pid, -diff);
+        printTo(uart3, "%f    %d\r\n", diff, turn_speed);
         if (turn_speed > TURN_SPEED)
             turn_speed = TURN_SPEED;
         if (turn_speed < -TURN_SPEED)
