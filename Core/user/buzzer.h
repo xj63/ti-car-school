@@ -1,5 +1,5 @@
-#ifndef BUZZER_H__
-#define BUZZER_H__
+#ifndef __BUZZER_H__
+#define __BUZZER_H__
 
 void buzzer_ring();
 
