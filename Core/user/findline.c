@@ -17,14 +17,14 @@ float find_line_diff()
     uint8_t buf = gw_gray_get_line_digital_is_black();
     int8_t cnt = 0;
     float diff = 0;
-    diff += bin(buf & 0x01) * 10;
-    diff += bin(buf & 0x02) * 5;
-    diff += bin(buf & 0x04) * 2;
-    diff += bin(buf & 0x08) * 1;
-    diff += bin(buf & 0x10) * -1;
-    diff += bin(buf & 0x20) * -2;
-    diff += bin(buf & 0x40) * -5;
-    diff += bin(buf & 0x80) * -10;
+    diff += bin(buf & 0x01) * 600;
+    diff += bin(buf & 0x02) * 100;
+    diff += bin(buf & 0x04) * 10;
+    diff += bin(buf & 0x08) * 5;
+    diff += bin(buf & 0x10) * -5;
+    diff += bin(buf & 0x20) * -10;
+    diff += bin(buf & 0x40) * -100;
+    diff += bin(buf & 0x80) * -600;
 
     while (buf)
     {
@@ -45,7 +45,7 @@ PID *findline_pid;
 void start_findline()
 {
     findline_flag = 1;
-    findline_pid = initPID(0.5, 0, 0, 10, 50);
+    findline_pid = initPID(1, 0, 0.5, 10, 50);
 }
 
 void stop_findline()
@@ -67,8 +67,8 @@ void findline()
         float diff = find_line_diff();
         int8_t XZ = returnPID(findline_pid, diff, 0);
 
-        left_tar += XZ;
-        right_tar -= XZ;
+        left_tar -= XZ;
+        right_tar += XZ;
     }
 
     return;
