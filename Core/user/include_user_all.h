@@ -14,4 +14,11 @@
 #include "motor.h"
 #include "motor_control.h"
 
+#include "keep.h"
+#include "turn.h"
+#include "turn_abs.h"
+#include "straight.h"
+#include "findline.h"
+
+
 #endif // !__INCLUDE_USER_ALL_H__
