@@ -124,21 +124,12 @@ int main(void)
     MX_USART3_UART_Init();
     MX_TIM5_Init();
     /* USER CODE BEGIN 2 */
-    motor_init();
-    turn_abs_head_init();
-    HAL_TIM_Base_Start_IT(&htim5);
+    car_init();
     /* USER CODE END 2 */
 
     /* Infinite loop */
     /* USER CODE BEGIN WHILE */
-    start_straight(2000);
-    start_keep_angle(0);
-    turn_abs_start_turn(90);
-    start_straight(2000);
-    start_keep_angle(90);
-    turn_abs_start_turn(40);
-    start_straight(2000);
-    start_keep_angle(40);
+    car_run();
 
     while (1)
     {
