@@ -11,7 +11,7 @@ test_math_utils: test_math_utils.c ../math_utils.c ../math_utils.h unit_test.c u
 	./test_math_utils.bin.test
 
 test_statement: test_statement.c ../statement.c ../statement.h ../math_utils.c ../math_utils.h unit_test.c unit_test.h
-	gcc -D$(TEST) test_statement.c ../statement.c ../math_utils.c unit_test.c -o test_statement.bin.test
+	gcc -D$(TEST) test_statement.c unit_test.c -o test_statement.bin.test
 	./test_statement.bin.test
 
 .PHONY: clean

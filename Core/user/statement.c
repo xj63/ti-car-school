@@ -1,9 +1,22 @@
 #include "statement.h"
+#include "include_user_all.h"
 #include "math_utils.h"
 
 struct Statement static_statement;
 
-void statement_init(float direction_offset) {
+void statement_init() {
+  statement_update_direction_offset();
+
+  // 无聊的填 0 阶段
+  static_statement.target.wheels.left = 0;
+  static_statement.target.wheels.right = 0;
+  static_statement.target.direction = 0.0;
+
+  static_statement.current.wheels.left = 0;
+  static_statement.current.wheels.right = 0;
+}
+
+void statement_init_for_test(float direction_offset) {
   static_statement.direction_offset = direction_offset;
   static_statement.current.direction = direction_offset;
 
@@ -35,12 +48,19 @@ float statement_diff_direction() {
   return wrapping(diff_direciton, -180.0, 180.0);
 }
 
+void statement_update_direction_offset() {
+  float direction = Get_gyr_value(gyr_z_yaw);
+  statement_set_direction_offset(direction);
+  statement_set_current_direction(direction);
+}
+
 void statement_update_current_wheels() {
-  // TODO: motor
+  statement_set_current_wheels_left(-motor_getSpeed(M_L));
+  statement_set_current_wheels_right(motor_getSpeed(M_R));
 }
 
 void statement_update_current_direction() {
-  // TODO: gy901
+  statement_set_current_direction(Get_gyr_value(gyr_z_yaw));
 }
 
 void statement_update_current() {

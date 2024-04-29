@@ -25,13 +25,18 @@ struct Statement {
 
 extern struct Statement static_statement;
 
-void statement_init(float direction_offset);
+void statement_init();
+void statement_init_for_test(float direction_offset);
 
 struct Wheels statement_diff_wheels();
 
 float statement_diff_direction();
 
 /// 一些 update 函数
+
+/// 将读取 gy901 陀螺仪的角度作为当前的方向
+void statement_update_direction_offset();
+
 void statement_update_current_wheels();
 void statement_update_current_direction();
 void statement_update_current();

@@ -1,13 +1,11 @@
-#include <stdio.h>
-
 #include "assert.h"
-#include "color_terminal.h"
-#include "../statement.h"
 #include "unit_test.h"
 #include <stdlib.h>
 
+/*
+#include "../statement.h"
 void test_statement_diff_wheel() {
-  statement_init(90.0);
+  statement_init_for_test(90.0);
 
   struct Wheels diff;
   diff = statement_diff_wheels();
@@ -48,7 +46,7 @@ void test_statement_diff_wheel() {
 }
 
 void test_statement_diff_direction() {
-  statement_init(90.0);
+  statement_init_for_test(90.0);
 
   float diff;
   diff = statement_diff_direction();
@@ -66,7 +64,7 @@ void test_statement_diff_direction() {
   diff = statement_diff_direction();
   assert_eq_float(0.0, diff);
 
-  statement_init(90.0);
+  statement_init_for_test(90.0);
   statement_set_current_direction(180.0);
   statement_set_target_direction(-270.0);
   diff = statement_diff_direction();
@@ -74,9 +72,11 @@ void test_statement_diff_direction() {
 
   puts("test_statement_diff_direction is " COLOR_TERMINAL_GREEN("ok"));
 }
+*/
 
 int main(int argc, char *argv[]) {
-  test_statement_diff_wheel();
-  test_statement_diff_direction();
+  // test_statement_diff_wheel();
+  // test_statement_diff_direction();
+  panic(0, "由于statement中使用了一些硬件，目前已经不能进行测试");
   return EXIT_SUCCESS;
 }
