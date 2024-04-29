@@ -42,7 +42,6 @@ void keep_angle()
             return;
         }
         float diff;
-        int16_t turn_XZ = 0;
         diff = turn_head_diff(static_keep_angle, turn_abs_origin);
         int turn_speed = pid_inc(&keep_angle_pid, -diff);
         printTo(uart3, "%f    %d\r\n", diff, turn_speed);
@@ -50,7 +49,7 @@ void keep_angle()
             turn_speed = TURN_SPEED;
         if (turn_speed < -TURN_SPEED)
             turn_speed = -TURN_SPEED;
-        left_tar += -turn_speed - turn_XZ;
-        right_tar += turn_speed - turn_XZ;
+        left_tar += -turn_speed;
+        right_tar += turn_speed;
     }
 }
