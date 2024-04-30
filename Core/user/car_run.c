@@ -646,7 +646,6 @@ void go_stop_p11()
 
 void go_stop_p12()
 {
-    // TODO:
     start_straight(2450);
     start_keep_angle(0.0);
     turn_abs_start_turn(45.0);
