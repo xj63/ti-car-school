@@ -568,7 +568,7 @@ void go_stop_p10()
     }
 
     turn_abs_start_turn(180.0);
-    start_straight(930);
+    start_straight(880);
     start_keep_angle(180.0);
 
     turn_abs_start_turn(135.0);
