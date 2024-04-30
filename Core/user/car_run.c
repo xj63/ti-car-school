@@ -285,7 +285,7 @@ void go_stop_p5()
     start_keep_angle(45.0);
 
     turn_abs_start_turn(0.0);
-    start_straight(2330);
+    start_straight(2250);
     start_keep_angle(0.0);
 
     {
@@ -416,5 +416,5 @@ void mode2()
 
 void car_run()
 {
-    go_stop_p4();
+    go_stop_p5();
 }
