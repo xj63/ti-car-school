@@ -13,7 +13,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
     HAL_UART_Receive_IT(&huart3, &sta, 1);
 	  turn_abs_head_init();
-	printTo(uart4, "%hhu\r\n", sta);
 }
 
 void delay(uint16_t S)
