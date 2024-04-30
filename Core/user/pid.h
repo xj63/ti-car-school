@@ -30,6 +30,7 @@ typedef struct PID
 } PID;
 
 PID *initPID(float kp, float ki, float kd, int data_len, float i_max);
+void reinitPID(PID *pid);
 float returnPID(PID *pid, float cur, float tar);
 
 #endif

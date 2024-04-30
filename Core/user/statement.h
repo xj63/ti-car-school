@@ -26,7 +26,6 @@ struct Statement {
 extern struct Statement static_statement;
 
 void statement_init();
-void statement_init_for_test(float direction_offset);
 
 struct Wheels statement_diff_wheels();
 

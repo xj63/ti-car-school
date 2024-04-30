@@ -2,7 +2,7 @@
  * @Author: zl 2293721550@qq.com
  * @Date: 2024-04-28 21:11:33
  * @LastEditors: zl 2293721550@qq.com
- * @LastEditTime: 2024-04-28 22:08:42
+ * @LastEditTime: 2024-04-30 15:31:28
  * @FilePath: \WuYi_xiaosai\Core\user\keep.c
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -20,7 +20,8 @@ static struct pid_data keep_angle_pid;
 void keep_angle_set(float angle)
 {
     static_keep_angle = angle;
-    pid_init(&keep_angle_pid, 0, 3, 0, 5, 5);
+    // pid_init(&keep_angle_pid, 0, 3, 0.4, 5, 5);
+    pid_init(&keep_angle_pid, 0, 3, 0.3, 3, 5);
 }
 
 void start_keep_angle(float angle)
