@@ -421,7 +421,6 @@ void go_stop_p7()
 
 void go_stop_p8()
 {
-    // TODO:
     start_straight(2450);
     start_keep_angle(0.0);
     turn_abs_start_turn(45.0);
@@ -476,7 +475,56 @@ void go_stop_p8()
 
 void go_stop_p9()
 {
-    // TODO:
+    start_straight(2450);
+    start_keep_angle(0.0);
+    turn_abs_start_turn(45.0);
+    start_straight(1700);
+    start_keep_angle(45.0);
+
+    turn_abs_start_turn(0.0);
+    start_straight(3200);
+    start_keep_angle(0.0);
+
+    turn_abs_start_turn(45.0);
+    start_straight(700);
+    start_keep_angle(45.0);
+
+    turn_abs_start_turn(90.0);
+    start_straight(3500);
+    start_keep_angle(90.0);
+
+    turn_abs_start_turn(135.0);
+    start_straight(700);
+    start_keep_angle(135.0);
+
+    turn_abs_start_turn(180.0);
+    start_straight(970);
+    start_keep_angle(180.0);
+
+    {
+        turn_abs_start_turn(270.0);
+        start_straight(-1300);
+        start_keep_angle(270.0);
+
+        stop_ring();
+
+        start_straight(1300);
+        start_keep_angle(270.0);
+    }
+
+    turn_abs_start_turn(180.0);
+    start_straight(2030);
+    start_keep_angle(180.0);
+
+    turn_abs_start_turn(135.0);
+    start_straight(1700);
+    start_keep_angle(135.0);
+
+    turn_abs_start_turn(180.0);
+    start_straight(2000);
+    start_keep_angle(180.0);
+
+    buzzer_ring(3);
 }
 
 void go_stop_p10()
