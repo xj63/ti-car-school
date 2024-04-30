@@ -34,7 +34,7 @@ float find_line_diff()
     if (cnt == 0)
         cnt = 1;
 
-    printTo(uart1, "%f\r\n", diff / cnt);
+    //printTo(uart1, "%f\r\n", diff / cnt);
 
     return diff / cnt;
 }

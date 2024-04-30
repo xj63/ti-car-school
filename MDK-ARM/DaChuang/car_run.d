@@ -42,4 +42,4 @@ dachuang/car_run.o: ..\Core\user\car_run.c \
   ..\Core\user\math_utils.h ..\Core\user\statement.h \
   ..\Core\user\motor.h ..\Core\user\motor_control.h ..\Core\user\keep.h \
   ..\Core\user\turn.h ..\Core\user\turn_abs.h ..\Core\user\straight.h \
-  ..\Core\user\findline.h
+  ..\Core\user\findline.h ..\Core\Inc\usart.h

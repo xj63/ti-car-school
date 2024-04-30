@@ -5,7 +5,7 @@ void car_timer() {
   right_cur = motor_getSpeed(M_R);
   gun_cur = motor_getSpeed(M_G);
 	
-	printTo(uart1, "%hhd,%hhd\n", left_cur, -right_cur);
+	//printTo(uart1, "%hhd,%hhd\n", left_cur, -right_cur);
 	//printTo(uart1, "goals: left: %hhd right: %hhd\r\n", left_tar, right_tar);
 
   // printTo(uart1, "move:%d turn:%d stra:%d\r\n", moving_flag, turn_flag,

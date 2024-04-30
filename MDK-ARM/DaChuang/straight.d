@@ -1,5 +1,5 @@
-dachuang/straight.o: ..\Core\user\straight.c ..\Core\user\pid.h \
-  ..\Core\user\motor_control.h ..\Core\Inc\main.h \
+dachuang/straight.o: ..\Core\user\straight.c \
+  ..\Core\user\include_user_all.h ..\Core\Inc\main.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal.h \
   ..\Core\Inc\stm32h7xx_hal_conf.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h \
@@ -37,10 +37,10 @@ dachuang/straight.o: ..\Core\user\straight.c ..\Core\user\pid.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_tim_ex.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h \
-  ..\Core\user\include_user_all.h ..\Core\user\drive\buzzer.h \
-  ..\Core\user\drive\gw_findline.h ..\Core\user\drive\gy901.h \
-  ..\Core\user\drive\printTo.h ..\Core\user\math_utils.h \
-  ..\Core\user\statement.h ..\Core\user\motor.h ..\Core\user\keep.h \
+  ..\Core\user\drive\buzzer.h ..\Core\user\drive\gw_findline.h \
+  ..\Core\user\drive\gy901.h ..\Core\user\drive\printTo.h \
+  ..\Core\user\math_utils.h ..\Core\user\statement.h \
+  ..\Core\user\motor.h ..\Core\user\motor_control.h ..\Core\user\keep.h \
   ..\Core\user\turn.h ..\Core\user\turn_abs.h ..\Core\user\straight.h \
-  ..\Core\user\findline.h \
+  ..\Core\user\findline.h ..\Core\user\pid.h \
   D:\program\keil_5\ARM\ARMCLANG\Bin\..\include\stdlib.h

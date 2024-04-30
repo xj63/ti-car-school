@@ -4,7 +4,16 @@
 #include "main.h"
 #include "straight.h"
 #include "turn.h"
+#include "usart.h"
 #include "turn_abs.h"
+
+uint8_t sta = 0xff;
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+    printTo(uart3, "%d\r\n", sta);
+    HAL_UART_Receive_IT(&huart3, &sta, 1);
+}
 
 void delay(uint16_t S)
 {
@@ -674,8 +683,8 @@ void go_stop_p12()
         turn_abs_start_turn(90.0);
         start_straight(1500);
         start_keep_angle(90.0);
-			  
-			  start_straight(4000);
+
+        start_straight(4000);
         start_keep_angle(180.0);
     }
 
@@ -696,38 +705,36 @@ void car_run()
 {
     go_stop_p12();
 
-    unsigned int flag_todo = 0xff;
-    // TODO:
-    while (true)
+    while (1)
     {
-        switch (flag_todo) {
-            case 0: go_start_to_end(); break;
+        switch (sta) {
+            case 0:  go_start_to_end();  break;
             case 1:
-            case 21: go_stop_p1(); break;
+            case 21: go_stop_p1();       break;
             case 2:
-            case 22: go_stop_p2(); break;
+            case 22: go_stop_p2();       break;
             case 3:
-            case 23: go_stop_p3(); break;
+            case 23: go_stop_p3();       break;
             case 4:
-            case 24: go_stop_p4(); break;
+            case 24: go_stop_p4();       break;
             case 5:
-            case 25: go_stop_p5(); break;
+            case 25: go_stop_p5();       break;
             case 6:
-            case 26: go_stop_p6(); break;
+            case 26: go_stop_p6();       break;
             case 7:
-            case 27: go_stop_p7(); break;
+            case 27: go_stop_p7();       break;
             case 8:
-            case 28: go_stop_p8(); break;
+            case 28: go_stop_p8();       break;
             case 9:
-            case 29: go_stop_p9(); break;
+            case 29: go_stop_p9();       break;
             case 10:
-            case 30: go_stop_p10(); break;
+            case 30: go_stop_p10();      break;
             case 11:
-            case 31: go_stop_p11(); break;
+            case 31: go_stop_p11();      break;
             case 12:
-            case 32: go_stop_p12(); break;
+            case 32: go_stop_p12();      break;
             default: continue;
         }
-        flag_todo = 0xff; 
+        sta = 0xff; 
     }
 }
