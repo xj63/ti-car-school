@@ -449,12 +449,12 @@ void go_stop_p8()
 
     {
         turn_abs_start_turn(270.0);
-        start_straight(1300);
+        start_straight(1400);
         start_keep_angle(270.0);
 
         stop_ring();
 
-        start_straight(-1300);
+        start_straight(-1400);
         start_keep_angle(270.0);
     }
 
@@ -498,22 +498,22 @@ void go_stop_p9()
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);
-    start_straight(970);
+    start_straight(900);
     start_keep_angle(180.0);
 
     {
         turn_abs_start_turn(270.0);
-        start_straight(-1300);
+        start_straight(-1400);
         start_keep_angle(270.0);
 
         stop_ring();
 
-        start_straight(1300);
+        start_straight(1400);
         start_keep_angle(270.0);
     }
 
     turn_abs_start_turn(180.0);
-    start_straight(2030);
+    start_straight(2050);
     start_keep_angle(180.0);
 
     turn_abs_start_turn(135.0);
@@ -554,5 +554,5 @@ void mode2()
 
 void car_run()
 {
-    go_stop_p8();
+    go_stop_p9();
 }
