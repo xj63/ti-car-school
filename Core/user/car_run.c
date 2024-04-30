@@ -57,6 +57,8 @@ void go_start_to_end()
     turn_abs_start_turn(180.0);
     start_straight(2000);
     start_keep_angle(180.0);
+
+    stop_ring();
 }
 
 void go_stop_p1()
@@ -103,6 +105,8 @@ void go_stop_p1()
     turn_abs_start_turn(180.0);
     start_straight(2000);
     start_keep_angle(180.0);
+
+    stop_ring();
 }
 
 void go_stop_p2()
@@ -156,6 +160,8 @@ void go_stop_p2()
     turn_abs_start_turn(180.0);
     start_straight(2300);
     start_keep_angle(180.0);
+
+    stop_ring();
 }
 
 void go_stop_p3()
@@ -209,6 +215,8 @@ void go_stop_p3()
     turn_abs_start_turn(180.0);
     start_straight(2300);
     start_keep_angle(180.0);
+
+    stop_ring();
 }
 
 void go_stop_p4()
@@ -263,6 +271,8 @@ void go_stop_p4()
     turn_abs_start_turn(180.0);
     start_straight(2300);
     start_keep_angle(180.0);
+
+    stop_ring();
 }
 
 void go_stop_p5()
@@ -317,6 +327,8 @@ void go_stop_p5()
     turn_abs_start_turn(180.0);
     start_straight(2300);
     start_keep_angle(180.0);
+
+    stop_ring();
 }
 
 void go_stop_p6()
@@ -359,6 +371,8 @@ void go_stop_p6()
     turn_abs_start_turn(180.0);
     start_straight(2000);
     start_keep_angle(180.0);
+
+    stop_ring();
 }
 
 void go_stop_p7()
