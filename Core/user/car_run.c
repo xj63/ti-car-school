@@ -15,6 +15,15 @@ void delay(uint16_t S)
     }
 }
 
+void stop_ring()
+{
+    while (get_flag())
+        continue;
+    buzzer_ring();
+    delay(5);
+    buzzer_ring();
+}
+
 void go_start_to_end()
 {
     start_straight(2450);
@@ -52,6 +61,69 @@ void go_start_to_end()
     start_keep_angle(180.0);
 }
 
+void go_stop_p1()
+{
+    // TODO:
+    start_straight(2450);
+    start_keep_angle(0.0);
+    turn_abs_start_turn(45.0);
+    start_straight(1700);
+    start_keep_angle(45.0);
+
+    turn_abs_start_turn(0.0);
+    start_straight(3200);
+    start_keep_angle(0.0);
+
+    turn_abs_start_turn(45.0);
+    start_straight(700);
+    start_keep_angle(45.0);
+
+    turn_abs_start_turn(90.0);
+
+    start_straight(-1900);
+
+    stop_ring();
+
+    start_straight(5500);
+    start_keep_angle(90.0);
+
+    turn_abs_start_turn(135.0);
+    start_straight(700);
+    start_keep_angle(135.0);
+
+    turn_abs_start_turn(180.0);
+    start_straight(2800);
+    start_keep_angle(180.0);
+
+    turn_abs_start_turn(135.0);
+    start_straight(1800);
+    start_keep_angle(135.0);
+
+    turn_abs_start_turn(180.0);
+    start_straight(2000);
+    start_keep_angle(180.0);
+}
+
+void go_stop_p2()
+{
+    // TODO:
+}
+
+void go_stop_p3()
+{
+    // TODO:
+}
+
+void go_stop_p4()
+{
+    // TODO:
+}
+
+void go_stop_p5()
+{
+    // TODO:
+}
+
 void go_stop_p6()
 {
     start_straight(2450);
@@ -72,9 +144,7 @@ void go_stop_p6()
 
     start_straight(-1900);
 
-    buzzer_ring();
-    delay(5);
-    buzzer_ring();
+    stop_ring();
 
     start_straight(5500);
     start_keep_angle(90.0);
@@ -94,6 +164,36 @@ void go_stop_p6()
     turn_abs_start_turn(180.0);
     start_straight(2000);
     start_keep_angle(180.0);
+}
+
+void go_stop_p7()
+{
+    // TODO:
+}
+
+void go_stop_p8()
+{
+    // TODO:
+}
+
+void go_stop_p9()
+{
+    // TODO:
+}
+
+void go_stop_p10()
+{
+    // TODO:
+}
+
+void go_stop_p11()
+{
+    // TODO:
+}
+
+void go_stop_p12()
+{
+    // TODO:
 }
 
 void mode1()
