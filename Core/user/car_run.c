@@ -58,7 +58,7 @@ void go_start_to_end()
     start_straight(2000);
     start_keep_angle(180.0);
 
-    stop_ring();
+    buzzer_ring(3);
 }
 
 void go_stop_p1()
@@ -106,7 +106,7 @@ void go_stop_p1()
     start_straight(2000);
     start_keep_angle(180.0);
 
-    stop_ring();
+    buzzer_ring(3);
 }
 
 void go_stop_p2()
@@ -161,7 +161,7 @@ void go_stop_p2()
     start_straight(2300);
     start_keep_angle(180.0);
 
-    stop_ring();
+    buzzer_ring(3);
 }
 
 void go_stop_p3()
@@ -216,7 +216,7 @@ void go_stop_p3()
     start_straight(2300);
     start_keep_angle(180.0);
 
-    stop_ring();
+    buzzer_ring(3);
 }
 
 void go_stop_p4()
@@ -271,12 +271,11 @@ void go_stop_p4()
     start_straight(2300);
     start_keep_angle(180.0);
 
-    stop_ring();
+    buzzer_ring(3);
 }
 
 void go_stop_p5()
 {
-    // TODO:
     start_straight(2450);
     start_keep_angle(0.0);
 
@@ -327,7 +326,7 @@ void go_stop_p5()
     start_straight(2300);
     start_keep_angle(180.0);
 
-    stop_ring();
+    buzzer_ring(3);
 }
 
 void go_stop_p6()
@@ -371,7 +370,7 @@ void go_stop_p6()
     start_straight(2000);
     start_keep_angle(180.0);
 
-    stop_ring();
+    buzzer_ring(3);
 }
 
 void go_stop_p7()
@@ -418,7 +417,7 @@ void go_stop_p7()
     start_straight(2000);
     start_keep_angle(180.0);
 
-    stop_ring();
+    buzzer_ring(3);
 }
 
 void go_stop_p8()
