@@ -152,11 +152,11 @@ void go_stop_p6()
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);
-    start_straight(2800);
+    start_straight(2900);
     start_keep_angle(180.0);
 
     turn_abs_start_turn(135.0);
-    start_straight(1800);
+    start_straight(1600);
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);

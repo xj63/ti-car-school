@@ -1,5 +1,6 @@
 #include "gpio.h"
 #include "main.h"
+#include "include_user_all.h"
 
 void buzzer_ring(uint8_t len) {
   while (get_flag())
