@@ -17,11 +17,9 @@ void delay(uint16_t S)
 
 void stop_ring()
 {
-    while (get_flag())
-        continue;
-    buzzer_ring();
+    buzzer_ring(2);
     delay(5);
-    buzzer_ring();
+    buzzer_ring(2);
 }
 
 void go_start_to_end()
