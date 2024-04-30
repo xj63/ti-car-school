@@ -661,24 +661,23 @@ void go_stop_p12()
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);
-    start_straight(3200);
+    start_straight(3400);
     start_keep_angle(180.0);
 
     {
         turn_abs_start_turn(90.0);
-        start_straight(-1000);
+        start_straight(-1500);
         start_keep_angle(90.0);
 
         stop_ring();
 
         turn_abs_start_turn(90.0);
-        start_straight(2000);
+        start_straight(1500);
         start_keep_angle(90.0);
+			  
+			  start_straight(4000);
+        start_keep_angle(180.0);
     }
-
-    turn_abs_start_turn(180.0);
-    start_straight(3000);
-    start_keep_angle(180.0);
 
     buzzer_ring(3);
 }
@@ -695,5 +694,5 @@ void mode2()
 
 void car_run()
 {
-    go_stop_p11();
+    go_stop_p12();
 }
