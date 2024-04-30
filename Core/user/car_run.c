@@ -393,13 +393,13 @@ void go_stop_p7()
 
     turn_abs_start_turn(90.0);
 
-    start_straight(5500);
+    start_straight(5200);
     start_keep_angle(90.0);
 
     {
-        start_straight(-1900);
-        start_keep_angle(90.0);
         stop_ring();
+        start_straight(-1800);
+        start_keep_angle(90.0);
     }
 
     turn_abs_start_turn(135.0);
