@@ -11,8 +11,8 @@ uint8_t sta = 0xff;
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-    printTo(uart3, "%d\r\n", sta);
     HAL_UART_Receive_IT(&huart3, &sta, 1);
+	printTo(uart4, "%hhu\r\n", sta);
 }
 
 void delay(uint16_t S)
@@ -703,8 +703,6 @@ void mode2()
 
 void car_run()
 {
-    go_stop_p12();
-
     while (1)
     {
         switch (sta) {
@@ -735,6 +733,6 @@ void car_run()
             case 32: go_stop_p12();      break;
             default: continue;
         }
-        sta = 0xff; 
+        sta = 0xff;
     }
 }
