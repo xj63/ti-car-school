@@ -121,7 +121,7 @@ void go_stop_p3()
     start_keep_angle(45.0);
 
     turn_abs_start_turn(0.0);
-    start_straight(1130);
+    start_straight(1050);
     start_keep_angle(0.0);
 
     // TODO: stop p3
@@ -153,11 +153,11 @@ void go_stop_p3()
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);
-    start_straight(2900);
+    start_straight(3000);
     start_keep_angle(180.0);
 
     turn_abs_start_turn(135.0);
-    start_straight(1600);
+    start_straight(1700);
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);
@@ -209,7 +209,7 @@ void go_stop_p6()
     start_keep_angle(180.0);
 
     turn_abs_start_turn(135.0);
-    start_straight(1600);
+    start_straight(1700);
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);

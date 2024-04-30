@@ -44,6 +44,8 @@ void straight()
             int8_t straight_speed = is_forward ? STRAIGHT_SPEED : -STRAIGHT_SPEED;
             if (straight_L < 500)
                 straight_speed = straight_speed / 2;
+            if (straight_L < 300)
+                straight_speed = straight_speed / 2;
             if (straight_L < 100)
                 straight_speed = straight_speed / 2;
             left_tar += straight_speed; // 修正两边轮子走的距离不一样的问题
