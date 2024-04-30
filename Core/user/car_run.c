@@ -107,7 +107,6 @@ void go_stop_p1()
 
 void go_stop_p2()
 {
-    // TODO:
     start_straight(2450);
     start_keep_angle(0.0);
 
@@ -119,7 +118,6 @@ void go_stop_p2()
     start_straight(1100);
     start_keep_angle(0.0);
 
-    // TODO: stop p2
     {
         turn_abs_start_turn(90.0);
         start_straight(-1600);
@@ -216,11 +214,109 @@ void go_stop_p3()
 void go_stop_p4()
 {
     // TODO:
+    start_straight(2450);
+    start_keep_angle(0.0);
+
+    turn_abs_start_turn(45.0);
+    start_straight(1800);
+    start_keep_angle(45.0);
+
+    turn_abs_start_turn(0.0);
+    start_straight(1900);
+    start_keep_angle(0.0);
+
+    {
+        turn_abs_start_turn(90.0);
+        start_straight(-1600);
+        start_keep_angle(90.0);
+
+        stop_ring();
+
+        start_straight(1600);
+        start_keep_angle(90.0);
+    }
+
+    turn_abs_start_turn(0.0);
+    start_straight(1200);
+    start_keep_angle(0.0);
+
+    turn_abs_start_turn(45.0);
+    start_straight(700);
+    start_keep_angle(45.0);
+
+    turn_abs_start_turn(90.0);
+    start_straight(3400);
+    start_keep_angle(90.0);
+
+    turn_abs_start_turn(135.0);
+    start_straight(700);
+    start_keep_angle(135.0);
+
+    turn_abs_start_turn(180.0);
+    start_straight(2900);
+    start_keep_angle(180.0);
+
+    turn_abs_start_turn(135.0);
+    start_straight(1800);
+    start_keep_angle(135.0);
+
+    turn_abs_start_turn(180.0);
+    start_straight(2300);
+    start_keep_angle(180.0);
 }
 
 void go_stop_p5()
 {
     // TODO:
+    start_straight(2450);
+    start_keep_angle(0.0);
+
+    turn_abs_start_turn(45.0);
+    start_straight(1800);
+    start_keep_angle(45.0);
+
+    turn_abs_start_turn(0.0);
+    start_straight(1900);
+    start_keep_angle(0.0);
+
+    {
+        turn_abs_start_turn(90.0);
+        start_straight(1600);
+        start_keep_angle(90.0);
+
+        stop_ring();
+
+        start_straight(-1600);
+        start_keep_angle(90.0);
+    }
+
+    turn_abs_start_turn(0.0);
+    start_straight(1200);
+    start_keep_angle(0.0);
+
+    turn_abs_start_turn(45.0);
+    start_straight(700);
+    start_keep_angle(45.0);
+
+    turn_abs_start_turn(90.0);
+    start_straight(3400);
+    start_keep_angle(90.0);
+
+    turn_abs_start_turn(135.0);
+    start_straight(700);
+    start_keep_angle(135.0);
+
+    turn_abs_start_turn(180.0);
+    start_straight(2900);
+    start_keep_angle(180.0);
+
+    turn_abs_start_turn(135.0);
+    start_straight(1800);
+    start_keep_angle(135.0);
+
+    turn_abs_start_turn(180.0);
+    start_straight(2300);
+    start_keep_angle(180.0);
 }
 
 void go_stop_p6()
