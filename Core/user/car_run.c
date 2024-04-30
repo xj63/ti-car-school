@@ -33,6 +33,9 @@ void stop_ring()
 
 void go_start_to_end()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
     turn_abs_start_turn(45.0);
@@ -72,6 +75,9 @@ void go_start_to_end()
 
 void go_stop_p1()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
     turn_abs_start_turn(45.0);
@@ -120,6 +126,9 @@ void go_stop_p1()
 
 void go_stop_p2()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
 
@@ -175,6 +184,9 @@ void go_stop_p2()
 
 void go_stop_p3()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
 
@@ -230,6 +242,9 @@ void go_stop_p3()
 
 void go_stop_p4()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
 
@@ -285,6 +300,9 @@ void go_stop_p4()
 
 void go_stop_p5()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
 
@@ -340,6 +358,9 @@ void go_stop_p5()
 
 void go_stop_p6()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
     turn_abs_start_turn(45.0);
@@ -384,6 +405,9 @@ void go_stop_p6()
 
 void go_stop_p7()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
     turn_abs_start_turn(45.0);
@@ -430,6 +454,9 @@ void go_stop_p7()
 
 void go_stop_p8()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
     turn_abs_start_turn(45.0);
@@ -484,6 +511,9 @@ void go_stop_p8()
 
 void go_stop_p9()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
     turn_abs_start_turn(45.0);
@@ -538,6 +568,9 @@ void go_stop_p9()
 
 void go_stop_p10()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
     turn_abs_start_turn(45.0);
@@ -592,6 +625,9 @@ void go_stop_p10()
 
 void go_stop_p11()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
     turn_abs_start_turn(45.0);
@@ -646,6 +682,9 @@ void go_stop_p11()
 
 void go_stop_p12()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
     turn_abs_start_turn(45.0);
