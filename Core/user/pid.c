@@ -1,6 +1,6 @@
 #include "stdlib.h"
 #include "stdio.h"
-#include "printTo.h"
+#include "include_user_all.h"
 
 typedef struct PID
 {
@@ -37,6 +37,14 @@ PID *initPID(float kp, float ki, float kd, int data_len, float i_max)
     pid->head = 0;
 
     return pid;
+}
+
+void reinitPID(PID *pid)
+{
+    pid->is_first = 1;
+    pid->head = 0;
+    for (int i = 0; i < pid->data_len; i++)
+        pid->data[i] = 0;
 }
 
 void update_Data(PID *pid, float cur, float tar)

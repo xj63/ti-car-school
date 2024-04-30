@@ -14,11 +14,10 @@
  * @FilePath: \DaChuang\Core\user\turn.c
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
-#include "gy901.h"
+#include "include_user_all.h"
 #include "motor.h"
 #include "pid.h"
 #include "motor_control.h"
-#include "printTo.h"
 #include "pid_yuan.h"
 #include "stdlib.h"
 #include "main.h"
@@ -78,8 +77,8 @@ void turn()
         left_L += abs_XZ(left_cur);
         right_L += abs_XZ(right_cur);
         int16_t diff_L = left_L - right_L;
-        // int16_t turn_XZ = returnPID(turn_XZ_pid, diff_L, 0);
-        int16_t turn_XZ = 0;
+        int16_t turn_XZ = returnPID(turn_XZ_pid, diff_L, 0);
+        // int16_t turn_XZ = 0;
         if (turn_init_flag == 1)
         {
             turn_head_init();

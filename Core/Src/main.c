@@ -27,16 +27,14 @@
 /* USER CODE BEGIN Includes */
 #include "motor.h"
 #include "motor_control.h"
-#include "gy901.h"
-#include "printTo.h"
-#include "buzzer.h"
-#include "gw_findline.h"
+#include "include_user_all.h"
 #include "turn_abs.h"
 #include "findline.h"
 #include "straight.h"
 #include "keep.h"
 #include "car_init.h"
 #include "car_run.h"
+#include "car_timer.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -83,7 +81,7 @@ void I2C_scan()
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-    motor_driver();
+    car_timer();
 }
 /* USER CODE END 0 */
 
