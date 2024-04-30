@@ -15,7 +15,7 @@ void delay(uint16_t S)
     }
 }
 
-void mode1()
+void go_start_to_end()
 {
     start_straight(2450);
     start_keep_angle(0.0);
@@ -52,7 +52,7 @@ void mode1()
     start_keep_angle(180.0);
 }
 
-void mode2()
+void go_stop_p6()
 {
     start_straight(2450);
     start_keep_angle(0.0);
@@ -94,6 +94,16 @@ void mode2()
     turn_abs_start_turn(180.0);
     start_straight(2000);
     start_keep_angle(180.0);
+}
+
+void mode1()
+{
+    go_start_to_end();
+}
+
+void mode2()
+{
+    go_stop_p6();
 }
 
 void car_run()
