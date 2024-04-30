@@ -6,8 +6,18 @@
 #include "turn.h"
 #include "turn_abs.h"
 
-void mode1(){
-    start_straight(2350);
+void delay(uint16_t S)
+{
+    for (int i = S; i > 0; i--)
+    {
+        HAL_Delay(500);
+        HAL_Delay(500);
+    }
+}
+
+void mode1()
+{
+    start_straight(2450);
     start_keep_angle(0.0);
     turn_abs_start_turn(45.0);
     start_straight(1700);
@@ -30,11 +40,11 @@ void mode1(){
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);
-    start_straight(3000);
+    start_straight(2900);
     start_keep_angle(180.0);
 
     turn_abs_start_turn(135.0);
-    start_straight(1600);
+    start_straight(1700);
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);
@@ -42,8 +52,9 @@ void mode1(){
     start_keep_angle(180.0);
 }
 
-void mode2(){
-    start_straight(2350);
+void mode2()
+{
+    start_straight(2450);
     start_keep_angle(0.0);
     turn_abs_start_turn(45.0);
     start_straight(1700);
@@ -59,9 +70,13 @@ void mode2(){
 
     turn_abs_start_turn(90.0);
 
-    start_straight(-1000);
+    start_straight(-1900);
 
-    start_straight(3500);
+    buzzer_ring();
+    delay(5);
+    buzzer_ring();
+
+    start_straight(5500);
     start_keep_angle(90.0);
 
     turn_abs_start_turn(135.0);
@@ -69,11 +84,11 @@ void mode2(){
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);
-    start_straight(3000);
+    start_straight(2900);
     start_keep_angle(180.0);
 
     turn_abs_start_turn(135.0);
-    start_straight(1600);
+    start_straight(1700);
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);

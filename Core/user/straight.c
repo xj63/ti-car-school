@@ -20,8 +20,8 @@ struct PID *speed_XZ_pid = NULL;
 void start_straight(int16_t L) {
   while (get_flag())
     ;
-  is_forward = straight_L >= 0 ? 1 : 0;
-  straight_L = is_forward ? straight_L : -straight_L;
+  is_forward = L >= 0 ? 1 : 0;
+  straight_L = is_forward ? L : -L;
   straight_flag = 1;
   // moving_flag = turn_flag | straight_flag;
   speed_XZ_pid = initPID(0, 0, 0, 5, 10);
