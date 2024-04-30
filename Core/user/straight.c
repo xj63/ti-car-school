@@ -2,7 +2,7 @@
  * @Author: zl 2293721550@qq.com
  * @Date: 2024-04-03 23:56:39
  * @LastEditors: zl 2293721550@qq.com
- * @LastEditTime: 2024-04-30 16:56:13
+ * @LastEditTime: 2024-04-30 17:58:01
  * @FilePath: \DaChuang\Core\user\straight.c
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -25,7 +25,7 @@ void start_straight(int16_t L)
     straight_L = is_forward ? L : -L;
     straight_flag = 1;
     // moving_flag = turn_flag | straight_flag;
-    speed_XZ_pid = initPID(0, 0, 0, 5, 10);
+    // speed_XZ_pid = initPID(0, 0, 0, 5, 10);
 }
 
 void straight()
@@ -36,18 +36,18 @@ void straight()
     {
         if (straight_L > 0)
         {
-            left_L += left_cur;
-            right_L += right_cur;
-            int16_t diff = left_L - right_L;
-            int16_t speed_XZ = returnPID(speed_XZ_pid, diff, 0);
+            // left_L += left_cur;
+            // right_L += right_cur;
+            // int16_t diff = left_L - right_L;
+            // int16_t speed_XZ = returnPID(speed_XZ_pid, diff, 0);
 
             int8_t straight_speed = is_forward ? STRAIGHT_SPEED : -STRAIGHT_SPEED;
             if (straight_L < 500)
                 straight_speed = straight_speed / 2;
             if (straight_L < 100)
                 straight_speed = straight_speed / 2;
-            left_tar += straight_speed + speed_XZ; // 修正两边轮子走的距离不一样的问题
-            right_tar += straight_speed - speed_XZ;
+            left_tar += straight_speed; // 修正两边轮子走的距离不一样的问题
+            right_tar += straight_speed;
 
             if (is_forward)
                 straight_L -= (left_cur + right_cur) / 2;
@@ -63,7 +63,7 @@ void straight()
             left_tar = 0;
             right_tar = 0;
             straight_L = 0;
-            free(speed_XZ_pid);
+            // free(speed_XZ_pid);
             speed_XZ_pid = NULL;
             left_L = 0;
             right_L = 0;

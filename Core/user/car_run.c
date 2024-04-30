@@ -117,11 +117,11 @@ void go_stop_p3()
     start_keep_angle(0.0);
 
     turn_abs_start_turn(45.0);
-    start_straight(1500);
+    start_straight(1800);
     start_keep_angle(45.0);
 
     turn_abs_start_turn(0.0);
-    start_straight(500);
+    start_straight(1130);
     start_keep_angle(0.0);
 
     // TODO: stop p3
@@ -130,12 +130,14 @@ void go_stop_p3()
         start_straight(1200);
         start_keep_angle(90.0);
 
+        stop_ring();
+
         start_straight(-1200);
         start_keep_angle(90.0);
     }
 
     turn_abs_start_turn(0.0);
-    start_straight(3100);
+    start_straight(2000);
     start_keep_angle(0.0);
 
     turn_abs_start_turn(45.0);
@@ -159,7 +161,7 @@ void go_stop_p3()
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);
-    start_straight(2000);
+    start_straight(2300);
     start_keep_angle(180.0);
 }
 
@@ -257,5 +259,5 @@ void mode2()
 
 void car_run()
 {
-    go_stop_p1();
+    go_stop_p3();
 }
