@@ -4,7 +4,16 @@
 #include "main.h"
 #include "straight.h"
 #include "turn.h"
+#include "usart.h"
 #include "turn_abs.h"
+
+uint8_t sta = 0xff;
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+    printTo(uart3, "%d\r\n", sta);
+    HAL_UART_Receive_IT(&huart3, &sta, 1);
+}
 
 void delay(uint16_t S)
 {
@@ -674,8 +683,8 @@ void go_stop_p12()
         turn_abs_start_turn(90.0);
         start_straight(1500);
         start_keep_angle(90.0);
-			  
-			  start_straight(4000);
+
+        start_straight(4000);
         start_keep_angle(180.0);
     }
 
@@ -694,5 +703,5 @@ void mode2()
 
 void car_run()
 {
-    go_stop_p12();
+    // go_stop_p12();
 }
