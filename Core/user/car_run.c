@@ -213,6 +213,7 @@ void go_stop_p3()
 
 void go_stop_p4()
 {
+    // TODO:
     start_straight(2450);
     start_keep_angle(0.0);
 
@@ -221,7 +222,7 @@ void go_stop_p4()
     start_keep_angle(45.0);
 
     turn_abs_start_turn(0.0);
-    start_straight(2280);
+    start_straight(2330);
     start_keep_angle(0.0);
 
     {
