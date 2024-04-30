@@ -92,11 +92,11 @@ void go_stop_p1()
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);
-    start_straight(2800);
+    start_straight(2850);
     start_keep_angle(180.0);
 
     turn_abs_start_turn(135.0);
-    start_straight(1800);
+    start_straight(1700);
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);
