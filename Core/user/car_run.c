@@ -4,7 +4,16 @@
 #include "main.h"
 #include "straight.h"
 #include "turn.h"
+#include "usart.h"
 #include "turn_abs.h"
+
+uint8_t sta = 0xff;
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+    HAL_UART_Receive_IT(&huart3, &sta, 1);
+	  turn_abs_head_init();
+}
 
 void delay(uint16_t S)
 {
@@ -24,6 +33,9 @@ void stop_ring()
 
 void go_start_to_end()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
     turn_abs_start_turn(45.0);
@@ -63,6 +75,9 @@ void go_start_to_end()
 
 void go_stop_p1()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
     turn_abs_start_turn(45.0);
@@ -111,6 +126,9 @@ void go_stop_p1()
 
 void go_stop_p2()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
 
@@ -166,6 +184,9 @@ void go_stop_p2()
 
 void go_stop_p3()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
 
@@ -221,6 +242,9 @@ void go_stop_p3()
 
 void go_stop_p4()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
 
@@ -276,6 +300,9 @@ void go_stop_p4()
 
 void go_stop_p5()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
 
@@ -331,6 +358,9 @@ void go_stop_p5()
 
 void go_stop_p6()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
     turn_abs_start_turn(45.0);
@@ -375,6 +405,9 @@ void go_stop_p6()
 
 void go_stop_p7()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
     turn_abs_start_turn(45.0);
@@ -421,6 +454,9 @@ void go_stop_p7()
 
 void go_stop_p8()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
     turn_abs_start_turn(45.0);
@@ -475,6 +511,9 @@ void go_stop_p8()
 
 void go_stop_p9()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
     turn_abs_start_turn(45.0);
@@ -529,6 +568,9 @@ void go_stop_p9()
 
 void go_stop_p10()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
     turn_abs_start_turn(45.0);
@@ -583,6 +625,9 @@ void go_stop_p10()
 
 void go_stop_p11()
 {
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
     turn_abs_start_turn(45.0);
@@ -637,7 +682,9 @@ void go_stop_p11()
 
 void go_stop_p12()
 {
-    // TODO:
+    delay(5);
+    buzzer_ring(3);
+
     start_straight(2450);
     start_keep_angle(0.0);
     turn_abs_start_turn(45.0);
@@ -674,8 +721,8 @@ void go_stop_p12()
         turn_abs_start_turn(90.0);
         start_straight(1500);
         start_keep_angle(90.0);
-			  
-			  start_straight(4000);
+
+        start_straight(4000);
         start_keep_angle(180.0);
     }
 
@@ -694,5 +741,36 @@ void mode2()
 
 void car_run()
 {
-    go_stop_p12();
+    while (1)
+    {
+        switch (sta) {
+            case 0:  go_start_to_end();  break;
+            case 1:
+            case 21: go_stop_p1();       break;
+            case 2:
+            case 22: go_stop_p2();       break;
+            case 3:
+            case 23: go_stop_p3();       break;
+            case 4:
+            case 24: go_stop_p4();       break;
+            case 5:
+            case 25: go_stop_p5();       break;
+            case 6:
+            case 26: go_stop_p6();       break;
+            case 7:
+            case 27: go_stop_p7();       break;
+            case 8:
+            case 28: go_stop_p8();       break;
+            case 9:
+            case 29: go_stop_p9();       break;
+            case 10:
+            case 30: go_stop_p10();      break;
+            case 11:
+            case 31: go_stop_p11();      break;
+            case 12:
+            case 32: go_stop_p12();      break;
+            default: continue;
+        }
+        sta = 0xff;
+    }
 }

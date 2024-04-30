@@ -45,7 +45,7 @@ void keep_angle()
         float diff;
         diff = turn_head_diff(static_keep_angle, turn_abs_origin);
         int turn_speed = pid_inc(&keep_angle_pid, -diff);
-        printTo(uart3, "%f    %d\r\n", diff, turn_speed);
+        //printTo(uart3, "%f    %d\r\n", diff, turn_speed);
         if (turn_speed > TURN_SPEED)
             turn_speed = TURN_SPEED;
         if (turn_speed < -TURN_SPEED)
