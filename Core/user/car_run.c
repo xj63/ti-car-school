@@ -445,7 +445,20 @@ void go_stop_p8()
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);
-    start_straight(2900);
+    start_straight(700);
+    start_keep_angle(180.0);
+
+    {
+        turn_abs_start_turn(270.0);
+        start_straight(1200);
+        start_keep_angle(270.0);
+
+        start_straight(-1200);
+        start_keep_angle(270.0);
+    }
+
+    turn_abs_start_turn(180.0);
+    start_straight(2200);
     start_keep_angle(180.0);
 
     turn_abs_start_turn(135.0);
@@ -491,5 +504,5 @@ void mode2()
 
 void car_run()
 {
-    go_stop_p7();
+    go_stop_p8();
 }
