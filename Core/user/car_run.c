@@ -290,17 +290,17 @@ void go_stop_p5()
 
     {
         turn_abs_start_turn(90.0);
-        start_straight(1600);
+        start_straight(1300);
         start_keep_angle(90.0);
 
         stop_ring();
 
-        start_straight(-1600);
+        start_straight(-1300);
         start_keep_angle(90.0);
     }
 
     turn_abs_start_turn(0.0);
-    start_straight(850);
+    start_straight(800);
     start_keep_angle(0.0);
 
     turn_abs_start_turn(45.0);
