@@ -1374,7 +1374,7 @@ void go_stop_weight_p12()
         stop_ring();
 
         turn_abs_start_turn(90.0);
-        start_straight(1500);
+        start_straight(1400);
         start_keep_angle(90.0);
 
         start_straight(4000);
