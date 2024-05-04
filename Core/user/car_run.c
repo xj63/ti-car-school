@@ -12,7 +12,7 @@ uint8_t sta = 0xff;
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
     HAL_UART_Receive_IT(&huart3, &sta, 1);
-	  printTo(uart4, "%hhu\r\n", sta);
+	  // printTo(uart4, "%hhu\r\n", sta);
 	  turn_abs_head_init();
 }
 
@@ -27,9 +27,9 @@ void delay(uint16_t S)
 
 void stop_ring()
 {
-    buzzer_ring(3);
-    delay(5);
     buzzer_ring(2);
+    delay(5);
+    buzzer_ring(3);
 }
 
 void go_start_to_end()
@@ -67,9 +67,9 @@ void go_start_to_end()
     start_straight(1800);
     start_keep_angle(135.0);
 
-    turn_abs_start_turn(180.0);
+    turn_abs_start_turn(178.0);
     start_straight(2000);
-    start_keep_angle(180.0);
+    start_keep_angle(178.0);
 
     buzzer_ring(3);
 }
@@ -86,7 +86,7 @@ void go_stop_p1()
     start_keep_angle(45.0);
 
     turn_abs_start_turn(90.0);
-    start_straight(1700);
+    start_straight(1780);
     start_keep_angle(90.0);
 
     stop_ring();
@@ -107,20 +107,20 @@ void go_stop_p1()
     start_keep_angle(90.0);
 
     turn_abs_start_turn(135.0);
-    start_straight(700);
+    start_straight(900);
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);
-    start_straight(2900);
+    start_straight(2700);
     start_keep_angle(180.0);
 
     turn_abs_start_turn(135.0);
-    start_straight(1600);
+    start_straight(1800);
     start_keep_angle(135.0);
 
-    turn_abs_start_turn(180.0);
-    start_straight(2000);
-    start_keep_angle(180.0);
+    turn_abs_start_turn(175.0);
+    start_straight(1900);
+    start_keep_angle(175.0);
 
     buzzer_ring(3);
 }
@@ -138,17 +138,17 @@ void go_stop_p2()
     start_keep_angle(45.0);
 
     turn_abs_start_turn(0.0);
-    start_straight(1100);
+    start_straight(1120);
     start_keep_angle(0.0);
 
     {
         turn_abs_start_turn(90.0);
-        start_straight(-1600);
+        start_straight(-1400);
         start_keep_angle(90.0);
 
         stop_ring();
 
-        start_straight(1600);
+        start_straight(1400);
         start_keep_angle(90.0);
     }
 
@@ -165,20 +165,20 @@ void go_stop_p2()
     start_keep_angle(90.0);
 
     turn_abs_start_turn(135.0);
-    start_straight(700);
+    start_straight(900);
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);
-    start_straight(2900);
+    start_straight(2600);
     start_keep_angle(180.0);
 
     turn_abs_start_turn(135.0);
-    start_straight(1800);
+    start_straight(1900);
     start_keep_angle(135.0);
 
-    turn_abs_start_turn(180.0);
-    start_straight(2300);
-    start_keep_angle(180.0);
+    turn_abs_start_turn(175.0);
+    start_straight(1900);
+    start_keep_angle(175.0);
 
     buzzer_ring(3);
 }
