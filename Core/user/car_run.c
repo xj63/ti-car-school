@@ -185,7 +185,7 @@ void go_stop_p2()
 
 void go_stop_p3()
 {
-    delay(5);
+    //delay(5);
     buzzer_ring(3);
 
     start_straight(2450);
@@ -196,17 +196,17 @@ void go_stop_p3()
     start_keep_angle(45.0);
 
     turn_abs_start_turn(0.0);
-    start_straight(1050);
+    start_straight(1100);
     start_keep_angle(0.0);
 
     {
         turn_abs_start_turn(90.0);
-        start_straight(1200);
+        start_straight(1300);
         start_keep_angle(90.0);
 
         stop_ring();
 
-        start_straight(-1200);
+        start_straight(-1300);
         start_keep_angle(90.0);
     }
 
@@ -223,21 +223,21 @@ void go_stop_p3()
     start_keep_angle(90.0);
 
     turn_abs_start_turn(135.0);
-    start_straight(700);
+    start_straight(900);
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);
-    start_straight(3000);
+    start_straight(2600);
     start_keep_angle(180.0);
 
     turn_abs_start_turn(135.0);
-    start_straight(1700);
+    start_straight(1800);
     start_keep_angle(135.0);
 
-    turn_abs_start_turn(180.0);
-    start_straight(2300);
-    start_keep_angle(180.0);
-
+    turn_abs_start_turn(175.0);
+    start_straight(1900);
+    start_keep_angle(175.0);
+		
     buzzer_ring(3);
 }
 
@@ -254,22 +254,22 @@ void go_stop_p4()
     start_keep_angle(45.0);
 
     turn_abs_start_turn(0.0);
-    start_straight(2330);
+    start_straight(2300);
     start_keep_angle(0.0);
 
     {
         turn_abs_start_turn(90.0);
-        start_straight(-1600);
+        start_straight(-1500);
         start_keep_angle(90.0);
 
         stop_ring();
 
-        start_straight(1600);
+        start_straight(1500);
         start_keep_angle(90.0);
     }
 
     turn_abs_start_turn(0.0);
-    start_straight(850);
+    start_straight(800);
     start_keep_angle(0.0);
 
     turn_abs_start_turn(45.0);
@@ -281,27 +281,27 @@ void go_stop_p4()
     start_keep_angle(90.0);
 
     turn_abs_start_turn(135.0);
-    start_straight(700);
+    start_straight(900);
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);
-    start_straight(2900);
+    start_straight(2600);
     start_keep_angle(180.0);
 
     turn_abs_start_turn(135.0);
-    start_straight(1800);
+    start_straight(1950);
     start_keep_angle(135.0);
 
-    turn_abs_start_turn(180.0);
-    start_straight(2300);
-    start_keep_angle(180.0);
-
+    turn_abs_start_turn(175.0);
+    start_straight(1900);
+    start_keep_angle(175.0);
+		
     buzzer_ring(3);
 }
 
 void go_stop_p5()
 {
-    delay(5);
+    // delay(5);
     buzzer_ring(3);
 
     start_straight(2450);
@@ -335,7 +335,7 @@ void go_stop_p5()
     start_keep_angle(45.0);
 
     turn_abs_start_turn(90.0);
-    start_straight(3400);
+    start_straight(3600);
     start_keep_angle(90.0);
 
     turn_abs_start_turn(135.0);
@@ -343,16 +343,16 @@ void go_stop_p5()
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);
-    start_straight(2900);
+    start_straight(2800);
     start_keep_angle(180.0);
 
     turn_abs_start_turn(135.0);
-    start_straight(1700);
+    start_straight(1800);
     start_keep_angle(135.0);
 
-    turn_abs_start_turn(180.0);
+    turn_abs_start_turn(175.0);
     start_straight(2300);
-    start_keep_angle(180.0);
+    start_keep_angle(175.0);
 
     buzzer_ring(3);
 }
