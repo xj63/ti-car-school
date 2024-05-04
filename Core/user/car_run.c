@@ -185,7 +185,7 @@ void go_stop_p2()
 
 void go_stop_p3()
 {
-    //delay(5);
+    delay(5);
     buzzer_ring(3);
 
     start_straight(2450);
@@ -728,7 +728,7 @@ void go_stop_p12()
 
     buzzer_ring(3);
 }
-
+          
 void go_stop_weight_p1()
 {
     delay(5);
@@ -750,7 +750,7 @@ void go_stop_weight_p1()
     start_keep_angle(90.0);
 
     turn_abs_start_turn(0.0);
-    start_straight(3600);
+    start_straight(3500);
     start_keep_angle(0.0);
 
     turn_abs_start_turn(45.0);
@@ -766,7 +766,7 @@ void go_stop_weight_p1()
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);
-    start_straight(2700);
+    start_straight(2600);
     start_keep_angle(180.0);
 
     turn_abs_start_turn(135.0);
@@ -840,7 +840,7 @@ void go_stop_weight_p2()
 
 void go_stop_weight_p3()
 {
-    //delay(5);
+    delay(5);
     buzzer_ring(3);
 
     start_straight(2450);
@@ -909,7 +909,7 @@ void go_stop_weight_p4()
     start_keep_angle(45.0);
 
     turn_abs_start_turn(0.0);
-    start_straight(2300);
+    start_straight(2200);
     start_keep_angle(0.0);
 
     {
@@ -944,7 +944,7 @@ void go_stop_weight_p4()
     start_keep_angle(180.0);
 
     turn_abs_start_turn(135.0);
-    start_straight(1950);
+    start_straight(1800);
     start_keep_angle(135.0);
 
     turn_abs_start_turn(175.0);
@@ -998,11 +998,11 @@ void go_stop_weight_p5()
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);
-    start_straight(2800);
+    start_straight(2850);
     start_keep_angle(180.0);
 
     turn_abs_start_turn(135.0);
-    start_straight(1800);
+    start_straight(1880);
     start_keep_angle(135.0);
 
     turn_abs_start_turn(175.0);
@@ -1176,7 +1176,7 @@ void go_stop_weight_p9()
     start_keep_angle(45.0);
 
     turn_abs_start_turn(0.0);
-    start_straight(3200);
+    start_straight(3100);
     start_keep_angle(0.0);
 
     turn_abs_start_turn(45.0);
@@ -1249,7 +1249,7 @@ void go_stop_weight_p10()
     start_keep_angle(135.0);
 
     turn_abs_start_turn(180.0);
-    start_straight(2100);
+    start_straight(2180);
     start_keep_angle(180.0);
 
     {
@@ -1259,12 +1259,12 @@ void go_stop_weight_p10()
 
         stop_ring();
 
-        start_straight(-1200);
+        start_straight(-1300);
         start_keep_angle(270.0);
     }
 
     turn_abs_start_turn(180.0);
-    start_straight(750);
+    start_straight(700);
     start_keep_angle(180.0);
 
     turn_abs_start_turn(135.0);
